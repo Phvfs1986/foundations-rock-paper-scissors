@@ -43,14 +43,19 @@ function game() {
         const playerSelection = prompt("Rock, Paper or Scissors?");
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
+        document.getElementById("demo").innerHTML += `Game ${i + 1}: ` + playRound(playerSelection, computerSelection);
+        document.getElementById("demo").innerHTML += "<br>";
     }
 }
 let computer = 0;
 let player = 0;
 game();
-if (player > computer)
-    console.log("You Won The Game!");
-else if (player == computer)
-    console.log("It's a Tie!")
-else
-    console.log("You Lose The Game!");
+if (player > computer) {
+    document.getElementById("demo").innerText += "You Won The Game!";
+}
+else if (player == computer) {
+    document.getElementById("demo").innerText += "It's a Tie!";
+}
+else {
+    document.getElementById("demo").innerText += "You Lost The Game!";
+}
