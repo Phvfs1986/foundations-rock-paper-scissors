@@ -1,6 +1,3 @@
-let rock = document.getElementById('rock');
-let paper = document.getElementById('paper');
-let scissors = document.getElementById('scissors');
 let playerChoice = document.getElementById('game');
 
 let youPoints = 0;
@@ -20,6 +17,7 @@ function getComputerChoice() {
 function playRound(pChoice) {
     let cChoice = getComputerChoice();
     let x = document.getElementById('x');
+    console.log(pChoice)
     if (pChoice == 'Rock' && cChoice == 'Scissors') {
         youPoints++;
         x.innerText = pChoice + ' - ' + cChoice;
@@ -50,9 +48,12 @@ function checkScore() {
     let computerResults = document.getElementById('computer-points');
     let totalResults = document.getElementById('results');
     totalResults.innerText = '';
+    youResults.style.color = 'blue';
     youResults.textContent = youPoints;
+    computerResults.style.color = 'red';
     computerResults.textContent = computerPoints;
     if(youPoints == 5) {
+        totalResults.style.color = 'blue';
         totalResults.innerText = 'You Win!'
         youPoints = 0;
         computerPoints = 0;
@@ -60,6 +61,7 @@ function checkScore() {
         computerResults.textContent = computerPoints;
     }
     else if(computerPoints == 5) {
+        totalResults.style.color = 'red';
         totalResults.innerText = 'You Lose!'
         youPoints = 0;
         computerPoints = 0;
