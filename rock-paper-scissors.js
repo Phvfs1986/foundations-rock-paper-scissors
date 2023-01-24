@@ -43,8 +43,7 @@ function game() {
         const playerSelection = prompt("Rock, Paper or Scissors?");
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
-        document.getElementById("demo").innerHTML += `Game ${i + 1}: ` + playRound(playerSelection, computerSelection);
-        document.getElementById("demo").innerHTML += "<br>";
+        document.getElementById("demo").innerText += `Game ${i + 1}: ` + playRound(playerSelection, computerSelection) + '\n';
     }
 }
 let computer = 0;
